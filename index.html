@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RSS feeds for historical radio dramas from Radio Damascus.">
+  <title>Radio Damascus RSS</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #20242a;
+      --muted: #68717d;
+      --line: #e5e8ec;
+      --link: #155eef;
+      --surface: #ffffff;
+      --background: #f7f8fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 56px 20px;
+      background: var(--background);
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      width: min(100%, 680px);
+      margin: 0 auto;
+    }
+    header { margin-bottom: 28px; }
+    h1 {
+      margin: 0;
+      font-size: clamp(1.7rem, 5vw, 2.15rem);
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+      font-weight: 700;
+    }
+    .intro {
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+    .arabic {
+      direction: rtl;
+      unicode-bidi: isolate;
+      font-family: system-ui, "Noto Sans Arabic", "Segoe UI", sans-serif;
+    }
+    .feed-list {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--surface);
+    }
+    .feed {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 22px 24px;
+    }
+    .feed + .feed { border-top: 1px solid var(--line); }
+    h2 {
+      margin: 0;
+      font-size: 1.12rem;
+      font-weight: 650;
+    }
+    .subtitle {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    .feed-link {
+      flex: 0 0 auto;
+      display: inline-block;
+      padding: 8px 13px;
+      border: 1px solid #d6deea;
+      border-radius: 7px;
+      color: var(--link);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 600;
+    }
+    .feed-link:hover, .feed-link:focus-visible {
+      background: #f0f5ff;
+      border-color: #a9c4ff;
+      outline: none;
+    }
+    footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align: center;
+    }
+    footer a { color: inherit; }
+    @media (max-width: 480px) {
+      body { padding: 36px 16px; }
+      .feed { padding: 18px 16px; gap: 12px; }
+      .feed-link { padding: 7px 10px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Radio Damascus RSS</h1>
+      <p class="intro">
+        Historical radio dramas ·
+        <span class="arabic" lang="ar">المسلسلات الإذاعية التاريخية</span>
+      </p>
+    </header>
+
+    <section class="feed-list" aria-label="Available RSS feeds">
+      <article class="feed">
+        <div>
+          <h2><span class="arabic" lang="ar">السابقون</span> — As-Sābiqūn</h2>
+          <p class="subtitle">29 episodes · <span class="arabic" lang="ar">٢٩ حلقة</span></p>
+        </div>
+        <a class="feed-link" href="./sabiqoon.xml" type="application/rss+xml" aria-label="Open As-Sabiqoon RSS feed">RSS feed ↗</a>
+      </article>
+
+      <article class="feed">
+        <div>
+          <h2><span class="arabic" lang="ar">رجال كالجبال</span> — Rijāl kal-Jibāl</h2>
+          <p class="subtitle">5 episodes · <span class="arabic" lang="ar">٥ حلقات</span></p>
+        </div>
+        <a class="feed-link" href="./rijal-kaljibal.xml" type="application/rss+xml" aria-label="Open Rijal kal-Jibal RSS feed">RSS feed ↗</a>
+      </article>
+    </section>
+
+    <footer>
+      <span>Hosted on GitHub Pages</span>
+      <span aria-hidden="true"> · </span>
+      <a href="https://damasradio.fm/">Radio Damascus</a>
+    </footer>
+  </main>
+</body>
+</html>
